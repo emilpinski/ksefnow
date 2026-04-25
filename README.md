@@ -4,7 +4,7 @@
 
 > AI assistant for accounting firms to handle Poland's National e-Invoice System (KSeF).
 
-![Screenshot](./screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/emilpinski/ksefnow/main/docs/screenshots/Zrzut_ekranu_25-4-2026_121035_ksefnow.pl.jpeg)
 
 ## What is it
 
