@@ -2,68 +2,37 @@
 
 ![Status](https://img.shields.io/badge/Status-Live-green)
 
-> AI assistant for accounting firms to handle Poland's National e-Invoice System (KSeF).
-
-![Screenshot](screenshot.png)
+> KSeF automation SaaS for Polish accounting firms — AI invoice analysis, Ministry of Finance API sync, Stripe billing.
 
 ## What is it
 
-KSeF Now is a SaaS platform for accounting firms and bookkeepers that automates the handling of mandatory KSeF (required from 2026). The application uses AI to analyze invoices, detect anomalies, validate documents before sending to the Ministry of Finance system, and synchronizes data bidirectionally with the National e-Invoice System API.
-
-Built for accounting firms managing multiple clients who want to minimize manual invoice verification and avoid penalties for incorrect submissions.
+KSeF Now is a SaaS platform for accounting firms and bookkeepers that automates handling of mandatory KSeF (required from 2026). The application uses AI to analyze invoices, detect anomalies, and validate documents before submission to the Ministry of Finance system — with bidirectional sync to the National e-Invoice System API.
 
 ## Features
 
-- **AI categorization** — automatic recognition of cost type, VAT rate, and accounting code
+- **AI categorization** — automatic recognition of cost type, VAT rate, and accounting code via Anthropic Claude Sonnet via OpenRouter
 - **KSeF Sync** — bidirectional synchronization with the Ministry of Finance API, queues, retries, event log
-- **Anomaly alerts** — duplicate detection, unusual amounts, contractors outside the whitelist
-- **KSeF Sandbox** — testing integration in the MF sandbox environment without production impact
-- **Analytics dashboard** — Recharts charts, invoice history, submission statuses
-- **Multi-access for firms** — manage multiple clients from a single panel (Supabase RLS)
-- **Stripe billing** — SaaS subscriptions with 7-day trial, webhooks
-- **DPA compliance** — ready-to-use data processing agreement template (GDPR)
-- **Playwright scraping** — automated invoice retrieval from external systems
+- **Anomaly alerts** — duplicate detection, unusual amounts, contractors outside the VAT whitelist
+- **KSeF Sandbox** — test integration in the MF sandbox environment without production impact
+- **Analytics dashboard** — invoice history, submission statuses, monthly charts
+- **Multi-client management** — manage multiple accounting clients from a single panel (Supabase RLS)
+- **Stripe billing** — SaaS subscriptions with 7-day trial and webhook handling
+- **DPA compliance** — data processing agreement template for GDPR compliance
+- **Playwright scraping** — automated invoice retrieval from external accounting systems
 
 ## Stack
 
 | Layer | Technology |
 |-------|-----------|
-| Frontend | Next.js 16, React 19, TypeScript, Tailwind CSS v4 |
+| Frontend | Next.js, React, TypeScript, Tailwind CSS |
 | Backend | Next.js API Routes, Zod validation |
-| AI | OpenRouter API (claude-sonnet) |
+| AI | Anthropic Claude Sonnet via OpenRouter |
 | Database | Supabase (PostgreSQL + Auth + RLS) |
 | Payments | Stripe (subscriptions, webhooks) |
 | Email | Nodemailer |
 | Charts | Recharts |
 | Animations | Framer Motion |
 | Deploy | Vercel |
-
-## Getting Started
-
-```bash
-git clone https://github.com/emilpinski/ksefnow
-cd ksefnow
-npm install
-cp .env.example .env.local
-# Fill in environment variables
-npm run dev
-```
-
-## Environment Variables
-
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL | ✅ |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase public key | ✅ |
-| `SUPABASE_SERVICE_ROLE_KEY` | Supabase service key (backend) | ✅ |
-| `OPENROUTER_API_KEY` | OpenRouter API key | ✅ |
-| `STRIPE_SECRET_KEY` | Stripe key (backend) | ✅ |
-| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Stripe key (frontend) | ✅ |
-| `STRIPE_WEBHOOK_SECRET` | Webhook verification secret | ✅ |
-| `SMTP_HOST` | SMTP server for emails | ✅ |
-| `SMTP_USER` | SMTP login | ✅ |
-| `SMTP_PASS` | SMTP password | ✅ |
-| `KSEF_SANDBOX_URL` | MF sandbox API URL | ✅ |
 
 ## Status
 
@@ -72,12 +41,14 @@ Live — [ksefnow.pl](https://ksefnow.pl)
 ---
 Built by [Emil Piński](https://emilpinski.pl)
 
+> Source code is private. [Contact for collaboration](mailto:emilpinskidev@gmail.com)
+
 ## Screenshots
 
-![Screenshot](screenshot.png)
-![Screenshot](screenshot.png)
-![Screenshot](screenshot.png)
-![Screenshot](screenshot.png)
-![Screenshot](screenshot.png)
-![Screenshot](screenshot.png)
-![Screenshot](screenshot.png)
+![Landing page](docs/screenshots/landing_page_ksefnow.jpg)
+![Dashboard overview](docs/screenshots/Zrzut_ekranu_25-4-2026_121035_ksefnow.pl.jpeg)
+![Invoice list](docs/screenshots/Zrzut_ekranu_25-4-2026_121119_ksefnow.pl.jpeg)
+![KSeF sync panel](docs/screenshots/Zrzut_ekranu_25-4-2026_121140_ksefnow.pl.jpeg)
+![Anomaly alerts](docs/screenshots/Zrzut_ekranu_25-4-2026_121150_ksefnow.pl.jpeg)
+![Analytics dashboard](docs/screenshots/Zrzut_ekranu_25-4-2026_121218_ksefnow.pl.jpeg)
+![Billing and subscription](docs/screenshots/Zrzut_ekranu_25-4-2026_121933_ksefnow.pl.jpeg)
