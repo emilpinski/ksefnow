@@ -1,30 +1,71 @@
-# KSeF Now — Tax Automation SaaS
+# KSeF Now
 
-![Preview](screenshots/preview.png)
+> Asystent AI dla biur rachunkowych do obsługi Krajowego Systemu e-Faktur.
 
+![Screenshot](./screenshot.png)
 
-> Automate KSeF (National e-Invoice System) workflows for Polish accounting offices.
+## Co to jest
 
-**Live:** [ksefnow.pl](https://ksefnow.pl) &nbsp;|&nbsp; **Status:** Live
+KSeF Now to SaaS dla biur rachunkowych i księgowych, który automatyzuje obsługę obowiązkowego KSeF (od 2026 roku). Aplikacja analizuje faktury AI, wykrywa anomalie, waliduje dokumenty przed wysłaniem do systemu MF i synchronizuje dane dwukierunkowo z API Krajowego Systemu e-Faktur.
+
+Skierowana do biur rachunkowych obsługujących wielu klientów, które chcą zminimalizować ręczną weryfikację faktur i uniknąć kar za błędne przesyłanie.
+
+## Funkcje
+
+- **AI kategoryzacja** — automatyczne rozpoznawanie typu kosztu, stawki VAT i konta księgowego
+- **KSeF Sync** — dwukierunkowa synchronizacja z API Ministerstwa Finansów, kolejki, ponowienia, dziennik zdarzeń
+- **Alerty anomalii** — wykrywanie duplikatów, nietypowych kwot, kontrahentów spoza białej listy
+- **Sandbox KSeF** — testowanie integracji w środowisku MF bez wpływu na produkcję
+- **Dashboard analityczny** — wykresy Recharts, historia faktur, statusy przesyłania
+- **Wielodostęp dla biur** — zarządzanie wieloma klientami z jednego panelu (Supabase RLS)
+- **Stripe billing** — subskrypcje SaaS z 7-dniowym trial, webhooks
+- **DPA compliance** — gotowy szablon umowy powierzenia danych (RODO/GDPR)
+- **Playwright scraping** — automatyczne pobieranie faktur z systemów zewnętrznych
+
+## Stack
+
+| Warstwa | Technologia |
+|---------|-------------|
+| Frontend | Next.js 16, React 19, TypeScript, Tailwind CSS v4 |
+| Backend | Next.js API Routes, Zod validation |
+| AI | Anthropic Claude (claude-sonnet) via SDK |
+| Baza danych | Supabase (PostgreSQL + Auth + RLS) |
+| Płatności | Stripe (subscriptions, webhooks) |
+| Email | Nodemailer |
+| Charts | Recharts |
+| Animacje | Framer Motion |
+| Deploy | Vercel |
+
+## Uruchomienie
+
+```bash
+git clone https://github.com/emilpinski/ksefnow
+cd ksefnow
+npm install
+cp .env.example .env.local
+# Uzupelnij zmienne srodowiskowe
+npm run dev
+```
+
+## Zmienne środowiskowe
+
+| Zmienna | Opis | Wymagana |
+|---------|------|----------|
+| `NEXT_PUBLIC_SUPABASE_URL` | URL projektu Supabase | ✅ |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Klucz publiczny Supabase | ✅ |
+| `SUPABASE_SERVICE_ROLE_KEY` | Klucz serwisowy (backend) | ✅ |
+| `ANTHROPIC_API_KEY` | Klucz API Claude AI | ✅ |
+| `STRIPE_SECRET_KEY` | Klucz Stripe (backend) | ✅ |
+| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Klucz Stripe (frontend) | ✅ |
+| `STRIPE_WEBHOOK_SECRET` | Secret do weryfikacji webhooków | ✅ |
+| `SMTP_HOST` | Serwer SMTP dla emaili | ✅ |
+| `SMTP_USER` | Login SMTP | ✅ |
+| `SMTP_PASS` | Haslo SMTP | ✅ |
+| `KSEF_SANDBOX_URL` | URL sandbox API MF | ✅ |
+
+## Status
+
+WIP — staging, wdrożenie 2026
 
 ---
-
-## What it does
-
-- Invoice ingestion directly from the Ministry of Finance KSeF API
-- AI-powered cost classification into accounting codes with VAT rate detection
-- Anomaly detection: duplicate amounts, off-whitelist vendors, atypical volumes
-- Multi-tenant dashboard for accounting firms managing multiple client accounts
-- JPK_V7, JPK_FA, JPK_KR XML export ready for MF submission
-- Stripe subscription billing with tiered plans (199–999 PLN/month)
-
-## How it works
-
-- **KSeF API integration**: Bidirectional sync with Ministerstwo Finansów for real-time invoice ingestion, status polling, and correction workflows — handles queue retries, signature validation, audit logs
-- **AI classification**: Claude API auto-categorizes invoices into accounting codes and routes to correct ledger accounts
-- **Multi-tenant security**: Role-based access control with Supabase row-level security separating client data
-- **Compliance exports**: Generates digitally-signed JPK XML reports ready for MF submission
-
-## Tech Stack
-
-![Next.js](https://img.shields.io/badge/Next.js_15-black?logo=next.js) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white) ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?logo=supabase&logoColor=white) ![Stripe](https://img.shields.io/badge/Stripe-635BFF?logo=stripe&logoColor=white) ![Claude](https://img.shields.io/badge/Anthropic_Claude-D4A27F)
+Built by [Emil Piński](https://emilpinski.pl)
