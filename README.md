@@ -1,5 +1,8 @@
 # KSeF Now — Tax Automation SaaS
 
+![Preview](screenshots/preview.png)
+
+
 > Automate KSeF (National e-Invoice System) workflows for Polish accounting offices.
 
 **Live:** [ksefnow.pl](https://ksefnow.pl) &nbsp;|&nbsp; **Status:** Live
