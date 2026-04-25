@@ -28,7 +28,7 @@ Built for accounting firms managing multiple clients who want to minimize manual
 |-------|-----------|
 | Frontend | Next.js 16, React 19, TypeScript, Tailwind CSS v4 |
 | Backend | Next.js API Routes, Zod validation |
-| AI | Anthropic Claude (claude-sonnet) via SDK |
+| AI | OpenRouter API (claude-sonnet) |
 | Database | Supabase (PostgreSQL + Auth + RLS) |
 | Payments | Stripe (subscriptions, webhooks) |
 | Email | Nodemailer |
