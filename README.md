@@ -54,7 +54,7 @@ npm run dev
 | `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL | ✅ |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase public key | ✅ |
 | `SUPABASE_SERVICE_ROLE_KEY` | Supabase service key (backend) | ✅ |
-| `ANTHROPIC_API_KEY` | Claude AI API key | ✅ |
+| `OPENROUTER_API_KEY` | OpenRouter API key | ✅ |
 | `STRIPE_SECRET_KEY` | Stripe key (backend) | ✅ |
 | `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Stripe key (frontend) | ✅ |
 | `STRIPE_WEBHOOK_SECRET` | Webhook verification secret | ✅ |
