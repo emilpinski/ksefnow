@@ -1,71 +1,71 @@
 # KSeF Now
 
-> Asystent AI dla biur rachunkowych do obsługi Krajowego Systemu e-Faktur.
+> AI assistant for accounting firms to handle Poland's National e-Invoice System (KSeF).
 
 ![Screenshot](./screenshot.png)
 
-## Co to jest
+## What is it
 
-KSeF Now to SaaS dla biur rachunkowych i księgowych, który automatyzuje obsługę obowiązkowego KSeF (od 2026 roku). Aplikacja analizuje faktury AI, wykrywa anomalie, waliduje dokumenty przed wysłaniem do systemu MF i synchronizuje dane dwukierunkowo z API Krajowego Systemu e-Faktur.
+KSeF Now is a SaaS platform for accounting firms and bookkeepers that automates the handling of mandatory KSeF (required from 2026). The application uses AI to analyze invoices, detect anomalies, validate documents before sending to the Ministry of Finance system, and synchronizes data bidirectionally with the National e-Invoice System API.
 
-Skierowana do biur rachunkowych obsługujących wielu klientów, które chcą zminimalizować ręczną weryfikację faktur i uniknąć kar za błędne przesyłanie.
+Built for accounting firms managing multiple clients who want to minimize manual invoice verification and avoid penalties for incorrect submissions.
 
-## Funkcje
+## Features
 
-- **AI kategoryzacja** — automatyczne rozpoznawanie typu kosztu, stawki VAT i konta księgowego
-- **KSeF Sync** — dwukierunkowa synchronizacja z API Ministerstwa Finansów, kolejki, ponowienia, dziennik zdarzeń
-- **Alerty anomalii** — wykrywanie duplikatów, nietypowych kwot, kontrahentów spoza białej listy
-- **Sandbox KSeF** — testowanie integracji w środowisku MF bez wpływu na produkcję
-- **Dashboard analityczny** — wykresy Recharts, historia faktur, statusy przesyłania
-- **Wielodostęp dla biur** — zarządzanie wieloma klientami z jednego panelu (Supabase RLS)
-- **Stripe billing** — subskrypcje SaaS z 7-dniowym trial, webhooks
-- **DPA compliance** — gotowy szablon umowy powierzenia danych (RODO/GDPR)
-- **Playwright scraping** — automatyczne pobieranie faktur z systemów zewnętrznych
+- **AI categorization** — automatic recognition of cost type, VAT rate, and accounting code
+- **KSeF Sync** — bidirectional synchronization with the Ministry of Finance API, queues, retries, event log
+- **Anomaly alerts** — duplicate detection, unusual amounts, contractors outside the whitelist
+- **KSeF Sandbox** — testing integration in the MF sandbox environment without production impact
+- **Analytics dashboard** — Recharts charts, invoice history, submission statuses
+- **Multi-access for firms** — manage multiple clients from a single panel (Supabase RLS)
+- **Stripe billing** — SaaS subscriptions with 7-day trial, webhooks
+- **DPA compliance** — ready-to-use data processing agreement template (GDPR)
+- **Playwright scraping** — automated invoice retrieval from external systems
 
 ## Stack
 
-| Warstwa | Technologia |
-|---------|-------------|
+| Layer | Technology |
+|-------|-----------|
 | Frontend | Next.js 16, React 19, TypeScript, Tailwind CSS v4 |
 | Backend | Next.js API Routes, Zod validation |
 | AI | Anthropic Claude (claude-sonnet) via SDK |
-| Baza danych | Supabase (PostgreSQL + Auth + RLS) |
-| Płatności | Stripe (subscriptions, webhooks) |
+| Database | Supabase (PostgreSQL + Auth + RLS) |
+| Payments | Stripe (subscriptions, webhooks) |
 | Email | Nodemailer |
 | Charts | Recharts |
-| Animacje | Framer Motion |
+| Animations | Framer Motion |
 | Deploy | Vercel |
 
-## Uruchomienie
+## Getting Started
 
 ```bash
 git clone https://github.com/emilpinski/ksefnow
 cd ksefnow
 npm install
 cp .env.example .env.local
-# Uzupelnij zmienne srodowiskowe
+# Fill in environment variables
 npm run dev
 ```
 
-## Zmienne środowiskowe
+## Environment Variables
 
-| Zmienna | Opis | Wymagana |
-|---------|------|----------|
-| `NEXT_PUBLIC_SUPABASE_URL` | URL projektu Supabase | ✅ |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Klucz publiczny Supabase | ✅ |
-| `SUPABASE_SERVICE_ROLE_KEY` | Klucz serwisowy (backend) | ✅ |
-| `ANTHROPIC_API_KEY` | Klucz API Claude AI | ✅ |
-| `STRIPE_SECRET_KEY` | Klucz Stripe (backend) | ✅ |
-| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Klucz Stripe (frontend) | ✅ |
-| `STRIPE_WEBHOOK_SECRET` | Secret do weryfikacji webhooków | ✅ |
-| `SMTP_HOST` | Serwer SMTP dla emaili | ✅ |
-| `SMTP_USER` | Login SMTP | ✅ |
-| `SMTP_PASS` | Haslo SMTP | ✅ |
-| `KSEF_SANDBOX_URL` | URL sandbox API MF | ✅ |
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL | ✅ |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase public key | ✅ |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase service key (backend) | ✅ |
+| `ANTHROPIC_API_KEY` | Claude AI API key | ✅ |
+| `STRIPE_SECRET_KEY` | Stripe key (backend) | ✅ |
+| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Stripe key (frontend) | ✅ |
+| `STRIPE_WEBHOOK_SECRET` | Webhook verification secret | ✅ |
+| `SMTP_HOST` | SMTP server for emails | ✅ |
+| `SMTP_USER` | SMTP login | ✅ |
+| `SMTP_PASS` | SMTP password | ✅ |
+| `KSEF_SANDBOX_URL` | MF sandbox API URL | ✅ |
 
 ## Status
 
-WIP — staging, wdrożenie 2026
+WIP — staging, production deployment 2026
 
 ---
 Built by [Emil Piński](https://emilpinski.pl)
