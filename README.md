@@ -4,7 +4,7 @@
 
 > AI assistant for accounting firms to handle Poland's National e-Invoice System (KSeF).
 
-![Screenshot](https://raw.githubusercontent.com/emilpinski/ksefnow/main/docs/screenshots/Zrzut_ekranu_25-4-2026_121035_ksefnow.pl.jpeg)
+![Screenshot](screenshot.png)
 
 ## What is it
 
@@ -74,10 +74,10 @@ Built by [Emil Piński](https://emilpinski.pl)
 
 ## Screenshots
 
-![Screenshot 1](docs/screenshots/Zrzut_ekranu_25-4-2026_121035_ksefnow.pl.jpeg)
-![Screenshot 2](docs/screenshots/Zrzut_ekranu_25-4-2026_121119_ksefnow.pl.jpeg)
-![Screenshot 3](docs/screenshots/Zrzut_ekranu_25-4-2026_121140_ksefnow.pl.jpeg)
-![Screenshot 4](docs/screenshots/Zrzut_ekranu_25-4-2026_121150_ksefnow.pl.jpeg)
-![Screenshot 5](docs/screenshots/Zrzut_ekranu_25-4-2026_121218_ksefnow.pl.jpeg)
-![Screenshot 6](docs/screenshots/Zrzut_ekranu_25-4-2026_121933_ksefnow.pl.jpeg)
-![Screenshot 7](docs/screenshots/landing_page_ksefnow.jpg)
+![Screenshot](screenshot.png)
+![Screenshot](screenshot.png)
+![Screenshot](screenshot.png)
+![Screenshot](screenshot.png)
+![Screenshot](screenshot.png)
+![Screenshot](screenshot.png)
+![Screenshot](screenshot.png)
