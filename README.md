@@ -1,5 +1,7 @@
 # KSeF Now
 
+![Status](https://img.shields.io/badge/Status-Live-green)
+
 > AI assistant for accounting firms to handle Poland's National e-Invoice System (KSeF).
 
 ![Screenshot](./screenshot.png)
@@ -65,7 +67,7 @@ npm run dev
 
 ## Status
 
-WIP — staging, production deployment 2026
+Live — [ksefnow.pl](https://ksefnow.pl)
 
 ---
 Built by [Emil Piński](https://emilpinski.pl)
