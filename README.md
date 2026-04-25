@@ -71,3 +71,13 @@ Live — [ksefnow.pl](https://ksefnow.pl)
 
 ---
 Built by [Emil Piński](https://emilpinski.pl)
+
+## Screenshots
+
+![Screenshot 1](docs/screenshots/Zrzut_ekranu_25-4-2026_121035_ksefnow.pl.jpeg)
+![Screenshot 2](docs/screenshots/Zrzut_ekranu_25-4-2026_121119_ksefnow.pl.jpeg)
+![Screenshot 3](docs/screenshots/Zrzut_ekranu_25-4-2026_121140_ksefnow.pl.jpeg)
+![Screenshot 4](docs/screenshots/Zrzut_ekranu_25-4-2026_121150_ksefnow.pl.jpeg)
+![Screenshot 5](docs/screenshots/Zrzut_ekranu_25-4-2026_121218_ksefnow.pl.jpeg)
+![Screenshot 6](docs/screenshots/Zrzut_ekranu_25-4-2026_121933_ksefnow.pl.jpeg)
+![Screenshot 7](docs/screenshots/landing_page_ksefnow.jpg)
