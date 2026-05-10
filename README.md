@@ -34,6 +34,20 @@ KSeF Now is a SaaS platform for accounting firms and bookkeepers that automates 
 | Animations | Framer Motion |
 | Deploy | Vercel |
 
+## Compliance and data
+
+- **Data residency**: EU only (Supabase Frankfurt region)
+- **GDPR**: compliant; data processing agreement available on request
+- **Subprocessors**: Supabase (database, auth), Stripe (billing), Anthropic via OpenRouter (AI categorization inference only, no invoice data retained by model provider), Vercel (hosting)
+- **Audit trail**: every invoice state change is recorded as an immutable event with actor ID and timestamp
+- **Encryption**: all data encrypted at rest (AES-256) and in transit (TLS 1.3)
+
+## Market context
+
+KSeF (Krajowy System e-Faktur) becomes mandatory for all Polish VAT-registered businesses in February 2026, affecting approximately 2 million companies. Non-compliance carries financial penalties. KSeFNow provides accountants and accounting firms with a production-ready integration that handles the full invoice lifecycle: XML generation, MF API submission, status tracking, and audit logging.
+
+Comparable enterprise solutions (SAP, Comarch) require months of integration work. KSeFNow is API-first and deployable in days.
+
 ## Status
 
 Live — [ksefnow.pl](https://ksefnow.pl)
